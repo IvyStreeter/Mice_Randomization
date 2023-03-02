@@ -1,6 +1,6 @@
 # Mice_Randomization
-Mouse randomization is a tedious process. The number of groups and mice in your experiment increases the amount of time needed to organize a spreadsheet prior to drug treatment. This repo will focus on minimizing the mean and standard deviation between groups in the randomization process.            Jot something down         Shift + Return to add a new line
+Mouse randomization is a tedious process. The number of groups and mice in your experiment increases the amount of time needed to organize a spreadsheet prior to drug treatment. This repo will focus on minimizing the mean and standard deviation between groups in the randomization process.
 
-version 1, listed as the ipynb file, takes a generalized approach to dividing groups into groups of similar mean and variance
+Version 1, listed as the ipynb file, takes a generalized approach to dividing groups into groups of similar mean and variance. This version is not recommended for use.
 
-the final version, listed as the rmd file, uses anticlust to robustly approach this question and use with ease
+The final version, listed as the rmd file, uses anticlust to robustly approach this question and use with ease
