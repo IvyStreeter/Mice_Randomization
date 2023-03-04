@@ -26,14 +26,17 @@ The paper is accompanied by a library for the R programming language: anticlust.
 ```{R}
 # Edit these:
 
+# Set directory
+setwd("/Users/IvyStreeter/Desktop/Mouse_Random_R/")
+
 # File name:
-file_name = "/Users/IvyStreeter/Desktop/Mouse_Random_R/new_sort.csv"
+file_name = "new_sort.csv"
 
 # File to save name:
 file_to_save = "randomized_mice"
 
 # Edit your group
-number_of_groups = 3
+number_of_groups = 2
 ```
 
 
@@ -41,9 +44,6 @@ number_of_groups = 3
 # Check if packages are installed
 packages <- c("dplyr", "anticlust")
 install.packages(setdiff(packages, rownames(installed.packages()))) 
-
-# Set directory
-setwd("/Users/IvyStreeter/Desktop/Mouse_Random_R/")
 
 # Read your file
 dataframe <- read.csv(file = file_name, header = TRUE)
