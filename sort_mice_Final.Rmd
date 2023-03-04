@@ -27,7 +27,7 @@ The paper is accompanied by a library for the R programming language: anticlust.
 # Edit these:
 
 # File name:
-file_name = "/Users/IvyStreeter/Desktop/Mouse_Random_R/tosort.txt"
+file_name = "/Users/IvyStreeter/Desktop/Mouse_Random_R/new_sort.csv"
 
 # File to save name:
 file_to_save = "randomized_mice"
@@ -36,14 +36,17 @@ file_to_save = "randomized_mice"
 number_of_groups = 3
 ```
 
+
 ```{R}
 # Check if packages are installed
-packages <- c("readr", "dplyr", "anticlust")
+packages <- c("dplyr", "anticlust")
 install.packages(setdiff(packages, rownames(installed.packages()))) 
 
-#read your file
-library(readr)
-dataframe <- read.delim(file_name, header=TRUE,sep ="\t", dec = ".")
+# Set directory
+setwd("/Users/IvyStreeter/Desktop/Mouse_Random_R/")
+
+# Read your file
+dataframe <- read.csv(file = file_name, header = TRUE)
 
 # Perform kplus_anticlustering
 library(anticlust)
@@ -52,12 +55,15 @@ assigment <- kplus_anticlustering(dataframe$volume,
                             K = number_of_groups, 
                             variance = TRUE
                             )
-# view groups
+# View information of groups
 cat("\nMean of groups\n")
 tapply(dataframe$volume, assigment, mean)
 
 cat("\nStandard deviation of groups\n")
 tapply(dataframe$volume, assigment, sd)
+
+cat("\nMice per group\n")
+tapply(dataframe$volume, assigment, length)
 
 res <- cbind(dataframe,assigment)
 
